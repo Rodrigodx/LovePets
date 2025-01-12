@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>	
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +24,9 @@
 					
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link active" href="#">Entre ou cadastre-se</a>
+							<a class="nav-link" href="login.jsp"> Entre ou cadastre-se
+						
+							</a>
 					</li>
 				</ul>
 			</div>
@@ -64,12 +67,6 @@
 								<li><a class="dropdown-item" href="#"> Servicos</a></li>
 							</ul>	
 					</li>
-					
-					
-					
-					
-					
-				
 				</ul>
 			</div>
 		</div>
