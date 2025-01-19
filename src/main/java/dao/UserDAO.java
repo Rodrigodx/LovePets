@@ -15,9 +15,8 @@ public class UserDAO {
 	}
 	
 	public void insert(User user) {
-		String sql = "insert into love_pets.users (name, email, password) values(?, ?, ?)";
-		
-		try {
+		try {	
+			String sql = "insert into love_pets.users (name, email, password) values(?, ?, ?)";
 			PreparedStatement insert = connection.prepareStatement(sql);
 			
 			insert.setString(1, user.getName());

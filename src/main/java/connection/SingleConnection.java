@@ -22,7 +22,7 @@ public class SingleConnection {
 	private static void conectar() {
 		try {
 			if(conn == null) {
-				Class.forName("org.postrgresql.Driver");
+				Class.forName("org.postgresql.Driver");
 				conn = DriverManager.getConnection(url, user, pass);
 				conn.setAutoCommit(false);
 			}
@@ -31,7 +31,7 @@ public class SingleConnection {
 		}
 	}
 	
-	public  static Connection getConnection() {
+	public static Connection getConnection() {
 		return conn;
 	}
 
