@@ -32,20 +32,27 @@ public class ServletRegister extends HttpServlet {
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		String password2 = request.getParameter("password2");
 		
 		User user = new User();
-	
-		user.setName(name);
-		user.setEmail(email);
-		user.setPassword(password);
 		
-		try {
-			userDAO.insert(user);
-		}catch(Exception e) {
-			e.printStackTrace();
+		if(password.equals(password2)) {
+			user.setName(name);
+			user.setEmail(email);
+			user.setPassword(password);
+			
+			try {
+				userDAO.insert(user);
+				response.sendRedirect("login.jsp");
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else {
+			System.out.println("Senha: " + password);
+			System.out.println("Senha2: " + password2);
+			System.out.println("Senhas nao correspondem.");
+			System.out.println(user.toString());
 		}
-		
-		response.sendRedirect("login.jsp");
 	}
 
 }

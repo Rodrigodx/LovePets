@@ -31,6 +31,11 @@
 			<input type="password" class="form-control"
 				id="exampleInputPassword1" name="password">
 		</div>
+		<div class="mb-3">
+			<label for="exampleInputPassword2" class="form-label">Password</label>
+			<input type="password" class="form-control"
+				id="exampleInputPassword2" name="password2">
+		</div>
 		<button type="submit" class="btn btn-primary">Registrar</button>
 	</form>
 	<script

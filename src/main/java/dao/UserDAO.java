@@ -2,6 +2,7 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import connection.SingleConnection;
 import model.User;
@@ -14,7 +15,7 @@ public class UserDAO {
 		connection = SingleConnection.getConnection();
 	}
 	
-	public void insert(User user) {
+	public void insert(User user) throws SQLException {
 		try {	
 			String sql = "insert into love_pets.users (name, email, password) values(?, ?, ?)";
 			PreparedStatement insert = connection.prepareStatement(sql);
@@ -28,6 +29,7 @@ public class UserDAO {
 			
 		}catch(Exception e) {
 			e.printStackTrace();
+			connection.rollback();
 		}
 	}
 	
