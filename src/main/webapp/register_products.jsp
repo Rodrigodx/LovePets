@@ -14,7 +14,7 @@
 </head>
 <body>
 
-	<form action="<%= request.getContextPath() %>\product_register" method="post">
+	<form action="<%= request.getContextPath() %>/ServletProduct" method="post" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="exampleInputEmail1">Nome</label> <input type="text"
 				class="form-control" id="exampleInputName1" name="name"
@@ -31,8 +31,8 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="exampleFormControlFile1">Selecione uma imagem</label> <input
-				type="file" class="form-control-file" id="exampleFormControlFile1">
+			<label for="exampleFormControlFile1">Selecione uma imagem</label>
+			 <input type="file" accept="image/*" class="form-control-file" id="fileImage" name="image">
 		</div>
 
 		<button type="submit" class="btn btn-primary">Submit</button>

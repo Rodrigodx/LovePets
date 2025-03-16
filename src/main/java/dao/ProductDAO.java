@@ -18,14 +18,13 @@ public class ProductDAO {
 	public void saveProduct (Product product) throws SQLException {
 		
 		try {			
-			String sql = "insert into love_pets.products (id, name, price, pathImage) values(?, ?, ?, ?, ?)";
+			String sql = "insert into love_pets.products (name, price, name_image) values(?, ?, ?)";
 			
 			PreparedStatement insert = connection.prepareStatement(sql);
 			
-			insert.setInt(1, product.getId());
-			insert.setString(2, product.getName());
-			insert.setDouble(3, product.getPrice());
-			insert.setString(4, product.getPathImage());
+			insert.setString(1, product.getName());
+			insert.setDouble(2, product.getPrice());
+			insert.setString(3, product.getPathImage());
 			
 			insert.execute();
 			connection.commit();
