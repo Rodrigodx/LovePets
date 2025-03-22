@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import connection.SingleConnection;
+import jakarta.servlet.Servlet;
 import model.Product;
 
 public class ProductDAO {

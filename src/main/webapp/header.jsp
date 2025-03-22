@@ -1,76 +1,68 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>	
-	
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
-<body>
-	<nav class="navbar navbar-expand lg bg-body-tertiary">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#"> <img alt="Bootstrap"
-				src="/docs/5.3/assets/brand/bootstrap-logo.svg" width="30"
-				height="24">
-			</a>
+<style>
 
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	.links{
+		background-color: black;
+	}
+
+</style>
+</head>
+
+<body>
+
+	<header class="head">
+
+		<nav class="navbar bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#"> <img
+					src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="Logo"
+					width="30" height="24" class="d-inline-block align-text-top">
+					Bootstrap
+				</a>
 				<form class="d-flex" role="search">
 					<input class="form-control me-2" type="search" placeholder="Search"
 						aria-label="Search">
 					<button class="btn btn-outline-success" type="submit">Search</button>
 				</form>
-					
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-							<a class="nav-link" href="login.jsp"> Entre ou cadastre-se
-						
-							</a>
-					</li>
-				</ul>
+				<span> <a class="nav-link" href="login.jsp"> Entre ou
+						Cadastre-se </a>
+				</span>
 			</div>
-		</div>
-	</nav>
-	
-	<nav class="navbar navbar-expand lg bg-body-tertiary">
-		<div class="container-fluid">
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul	class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Farmacia</a>
+		</nav>
+
+		<nav class="navbar bg-light links">
+			<div class="container-fluid">
+				<ul class="nav nav-pills">
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+						href="#" role="button" aria-expanded="false">Farmacia</a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item"> Vermifugos</a></li>
-							<li><a class="dropdown-item"> Medicamentos</a></li>
-							<li><a class="dropdown-item"> Antipulgas e carrapatos</a></li>
+							<li><a class="dropdown-item" href="#">Vermifugos</a></li>
+							<li><a class="dropdown-item" href="#">Medicamentos</a></li>
+							<li><a class="dropdown-item" href="#">Antipulgas e
+									carrapatos</a></li>
 						</ul>
-						
-					</li>
-					<li class="nav-item ">
-						<a class="nav-link" href="#">Higiene</a>
-					</li>
-					<li class="nav-item ">
-						<a class="nav-link" href="#">Gatos</a>
-					</li>
-					<li class="nav-item ">
-						<a class="nav-link" href="#">Cachorros</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-							<img alt="" src="">
-							Outros
-						</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#"> Aves</a></li>
-								<li><a class="dropdown-item" href="#"> Adestramento</a></li>
-								<li><a class="dropdown-item" href="#"> Contato</a></li>
-								<li><a class="dropdown-item" href="#"> Servicos</a></li>
-							</ul>	
+					<li class="nav-item"><a class="nav-link" href="#">Gatos</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Cachorros</a></li>
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+						href="#" role="button" aria-expanded="false">Outros</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">Contatos</a></li>
+							<li><a class="dropdown-item" href="#">Serviços</a></li>
+						</ul>
 					</li>
 				</ul>
 			</div>
-		</div>
-	</nav>
-	
+		</nav>
+	</header>
+
 </body>
 </html>

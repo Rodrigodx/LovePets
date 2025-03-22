@@ -49,11 +49,13 @@ public class ServletProduct extends HttpServlet {
 			Part part = request.getPart("image");
 			byte[] foto = IOUtils.toByteArray(part.getInputStream());
 			String imageBase64 = Base64.getEncoder().encodeToString(foto);
-			System.out.println(imageBase64);
-				
+			String image = "data:" + part.getContentType() + ";base64," + imageBase64;	
+			System.out.println(image);
+
+			
 			product.setName(name);
 			product.setPrice(price1);
-			product.setPathImage(imageBase64);
+			product.setPathImage(image);
 		
 			productDAO.saveProduct(product);
 		} catch (SQLException e) {
@@ -62,12 +64,6 @@ public class ServletProduct extends HttpServlet {
 		
 	}
 
-	/*
-	 * private String getFileName(Part part) { String contentDisp =
-	 * part.getHeader("content-disposition"); String[] items =
-	 * contentDisp.split(";"); for (String s : items) { if
-	 * (s.trim().startsWith("filename")) { return s.substring(s.indexOf("=") + 2,
-	 * s.length() - 1); } } return ""; }
-	 */
+	
 
 }
