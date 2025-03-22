@@ -2,6 +2,7 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import connection.SingleConnection;
@@ -34,5 +35,24 @@ public class ProductDAO {
 			connection.rollback();
 		}
 		
+	}
+	
+	public Product findById(int id){
+		Product product = new Product();
+		try { 
+			String sql = "select *from love_pets.products where id = " + id;
+			
+			PreparedStatement select = connection.prepareStatement(sql);
+			
+			ResultSet result = select.executeQuery();
+			
+			while(result.next()) {
+				product.setId(result.getInt(id));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return product;
 	}
 }

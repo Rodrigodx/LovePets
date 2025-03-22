@@ -16,9 +16,6 @@
 </head>
 
 <body>
-
-	<header class="head">
-
 		<nav class="navbar bg-light">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#"> <img
@@ -62,7 +59,5 @@
 				</ul>
 			</div>
 		</nav>
-	</header>
-
 </body>
 </html>
