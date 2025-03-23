@@ -32,7 +32,15 @@ public class ServletProduct extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String idString = request.getParameter("id");
+		int id = Integer.parseInt(idString);
+		
+		Product product = productDAO.findById(id);
+		
+		
+		request.setAttribute("produto", product);
+		System.out.println(product);
+		request.getRequestDispatcher("/produto.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

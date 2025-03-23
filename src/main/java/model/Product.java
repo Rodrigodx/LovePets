@@ -49,6 +49,11 @@ public class Product {
 	public void setPathImage(String pathImage) {
 		this.pathImage = pathImage;
 	}
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", pathImage=" + pathImage + "]";
+	}
 	
 	
 	
