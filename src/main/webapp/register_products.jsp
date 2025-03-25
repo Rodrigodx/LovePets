@@ -16,7 +16,7 @@
 
 	<form action="<%= request.getContextPath() %>/ServletProduct" method="post" enctype="multipart/form-data">
 		<div class="form-group">
-			<label for="exampleInputEmail1">Nome</label> <input type="text"
+			<label for="exampleInputName1">Nome</label> <input type="text"
 				class="form-control" id="exampleInputName1" name="name"
 				aria-describedby="nameHelp" placeholder="Digite o nome">
 		</div>
@@ -29,6 +29,11 @@
 				<input type="text" class="form-control" id="inlineFormInputGroup"
 					placeholder="Price" name="price">
 			</div>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputEmail1">Categoria</label> <input type="text"
+				class="form-control" id="exampleInputName1" name="name"
+				aria-describedby="nameHelp" placeholder="Digite o nome">
 		</div>
 		<div class="form-group">
 			<label for="exampleFormControlFile1">Selecione uma imagem</label>
