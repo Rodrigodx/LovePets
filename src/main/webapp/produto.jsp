@@ -21,7 +21,7 @@
 		<div class="flex-shrink-0">
 			<img src="${produto.pathImage}" alt="...">
 		</div>
-		<div class="flex-grow-1 ms-3">T
+		<div class="flex-grow-1 ms-3">
 			<p>Nome ${produto.name}</p>
 			<p>R$ ${produto.price}</p>		
 		</div>

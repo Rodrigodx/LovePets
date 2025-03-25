@@ -1,21 +1,26 @@
 package model;
 
+import enums.ProductCategory;
+
 public class Product {
 
 	private Integer id;
 	private String name;
 	private Double price;
 	private String pathImage;
+	private Integer category;
+	
 	
 	public Product() {
 		
 	}
 	
-	public Product(Integer id, String name, Double price, String pathImage) {
+	public Product(Integer id, String name, Double price, String pathImage, Integer category) {
 		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.pathImage = pathImage;
+		this.category = category;
 	}
 
 	public Integer getId() {
@@ -49,7 +54,15 @@ public class Product {
 	public void setPathImage(String pathImage) {
 		this.pathImage = pathImage;
 	}
-
+	
+	public void setCategory (ProductCategory productCategory) {
+		this.category = productCategory.cod;
+	}
+	
+	public ProductCategory getProductCategory() {
+		return ProductCategory.findByCode(this.category).orElse(null);
+	}
+	
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", pathImage=" + pathImage + "]";
