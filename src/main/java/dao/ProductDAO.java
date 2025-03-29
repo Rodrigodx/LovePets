@@ -9,7 +9,6 @@ import java.util.List;
 
 import connection.SingleConnection;
 import enums.ProductCategory;
-import jakarta.servlet.Servlet;
 import model.Product;
 
 public class ProductDAO {

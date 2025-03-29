@@ -32,7 +32,7 @@
 		</div>
 		<div class="form-group">
 			<label for="exampleInputEmail1">Categoria</label> <input type="text"
-				class="form-control" id="exampleInputName1" name="name"
+				class="form-control" id="exampleInputName1" name="category"
 				aria-describedby="nameHelp" placeholder="Digite o nome">
 		</div>
 		<div class="form-group">

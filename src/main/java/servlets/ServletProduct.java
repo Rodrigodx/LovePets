@@ -18,6 +18,7 @@ import java.util.Base64;
 import org.apache.commons.compress.utils.IOUtils;
 
 import dao.ProductDAO;
+import enums.ProductCategory;
 
 @MultipartConfig
 @WebServlet("/ServletProduct")
@@ -50,8 +51,10 @@ public class ServletProduct extends HttpServlet {
 			Product product = new Product();
 			String name = request.getParameter("name");
 			String price = request.getParameter("price");
+			String category = request.getParameter("category");
 			
 			double price1 = Double.parseDouble(price);
+			ProductCategory cat = ProductCategory.valueOf(category);
 			
 			
 			Part part = request.getPart("image");
@@ -64,6 +67,7 @@ public class ServletProduct extends HttpServlet {
 			product.setName(name);
 			product.setPrice(price1);
 			product.setPathImage(image);
+			product.setCategory(cat);
 		
 			productDAO.saveProduct(product);
 		} catch (SQLException e) {
