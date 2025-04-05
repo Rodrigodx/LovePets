@@ -11,9 +11,11 @@ import jakarta.servlet.http.Part;
 import model.Product;
 
 import java.io.IOException;
+import java.lang.reflect.Parameter;
 import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.Base64;
+import java.util.List;
 
 import org.apache.commons.compress.utils.IOUtils;
 
@@ -33,15 +35,27 @@ public class ServletProduct extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String idString = request.getParameter("id");
-		int id = Integer.parseInt(idString);
 		
-		Product product = productDAO.findById(id);
+		String idParam = request.getParameter("id");
+		String categoryParam = request.getParameter("category");
 		
-		
-		request.setAttribute("produto", product);
-		System.out.println(product);
-		request.getRequestDispatcher("/produto.jsp").forward(request, response);
+		if(idParam != null && !idParam.isEmpty()) {
+			int id = Integer.parseInt(idParam);
+			
+			Product product = productDAO.findById(id);
+			
+			request.setAttribute("produto", product);
+			System.out.println(product);
+			request.getRequestDispatcher("/produto.jsp").forward(request, response);
+		}else if(categoryParam != null && !categoryParam.isEmpty()) {
+			Integer category = Integer.parseInt(categoryParam);
+			
+			List<Product> products = productDAO.findByCategory(category);
+			
+			request.setAttribute("produtos", products);
+			System.out.println(products);
+			request.getRequestDispatcher("/category_products.jsp").forward(request, response);
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
