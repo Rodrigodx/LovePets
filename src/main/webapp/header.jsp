@@ -41,7 +41,7 @@
 						class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
 						href="#" role="button" aria-expanded="false">Farmacia</a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">Vermifugos</a></li>
+							<li><a class="dropdown-item" href="ServletProduct?category=1">Vermifugos</a></li>
 							<li><a class="dropdown-item" href="#">Medicamentos</a></li>
 							<li><a class="dropdown-item" href="#">Antipulgas e
 									carrapatos</a></li>
