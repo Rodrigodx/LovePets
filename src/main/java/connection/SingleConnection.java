@@ -8,7 +8,7 @@ public class SingleConnection {
 	
 	public static String url = "jdbc:postgresql://localhost:5432/postgres";
 	public static String user = "postgres";
-	public static String pass = "admin";
+	public static String pass = "12345";
 	public static Connection conn = null;
 	
 	static {

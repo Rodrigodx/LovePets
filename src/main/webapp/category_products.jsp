@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -22,7 +22,7 @@
 	</header>
 	
 	<div class="row">
-		<c:forEach var = "p" items="${products}">
+		<c:forEach var="p" items="${products}">
 			<div class="col-md-4 mb-4">
 				<div class="card" style="width: 18rem;">
 					<img src="${p.pathImage}" class="card-image-top" alt="${p.name}">
@@ -33,6 +33,7 @@
 					</div>
 				</div>
 			</div>
+		</c:forEach>
 	</div>
 
 	<div class="card" style="width: 18rem;">
