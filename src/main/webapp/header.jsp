@@ -6,13 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-
-	.links{
-		background-color: black;
-	}
-
-</style>
+<link rel="stylesheet" type="text/css" href="./css/header.css">
 </head>
 
 <body>
@@ -42,8 +36,8 @@
 						href="#" role="button" aria-expanded="false">Farmacia</a>
 						<ul class="dropdown-menu">
 							<li><a class="dropdown-item" href="ServletProduct?category=1">Vermifugos</a></li>
-							<li><a class="dropdown-item" href="#">Medicamentos</a></li>
-							<li><a class="dropdown-item" href="#">Antipulgas e
+							<li><a class="dropdown-item" href="ServletProduct?category=2">Medicamentos</a></li>
+							<li><a class="dropdown-item" href="ServletProduct?category=3">Antipulgas e
 									carrapatos</a></li>
 						</ul>
 					<li class="nav-item"><a class="nav-link" href="#">Gatos</a></li>

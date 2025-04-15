@@ -15,6 +15,7 @@
 	rel="stylesheet"
 	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
 	crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./css/category_products.css">
 </head>
 <body>
 
@@ -22,10 +23,9 @@
 		<%@ include file="header.jsp"%>
 	</header>
 
-	<div class="row">
+	<div class="row lista-produtos">
 		<c:forEach var="p" items="${produtos}">
-			<div class="col-md-4 mb-4">
-				<div class="card" style="width: 18rem;">
+				<div class="card">
 					<img src="${p.pathImage}" class="card-image-top" alt="${p.name}">
 					<div class="card-body">
 						<h5 class="card-title">${p.name}</h5>
@@ -33,7 +33,6 @@
 						<a href="ServletProduct?id=${p.id}" class="btn btn-primary">Comprar</a>
 					</div>
 				</div>
-			</div>
 		</c:forEach>
 	</div>
 

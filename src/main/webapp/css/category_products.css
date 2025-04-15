@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+
+
+.lista-produtos{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.cards{
+	width: 315px;
+}
+
+.card{
+	width: 300px;
+}
+
+.card-image-top{
+  width: 195px;
+  height: 195px;
+  object-fit: contain;
+  border-radius: 8px;
+  padding-top: 2px;
+  margin: auto;
+}
