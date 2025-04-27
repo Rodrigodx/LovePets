@@ -1,6 +1,8 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import dao.UserDAO;
 import jakarta.servlet.ServletException;
@@ -32,8 +34,39 @@ public class ServletLogin extends HttpServlet {
 
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		Map<String, String> messages = new HashMap<String, String>();
+		
+		
+		if (email == null || email.isEmpty()) {
+			messages.put("email", "Please enter your email");
+		}
+		
+		if (password == null || password.isEmpty()) {
+			messages.put("password", "Please enter your password");
+		}
+		
+		if(messages.isEmpty()) {
+			User user = dao.findUserByEmail(email);
+			
+			if(user != null && password.equals(user.getPassword())) {
+				HttpSession session = request.getSession();
+				session.setAttribute("user", user);
+				response.sendRedirect(request.getContextPath() + "/Inicial.jsp");
+				return;
+			}else {
+				messages.put("login", "Email or password incorret");
+				request.setAttribute("message", messages);
+				request.getRequestDispatcher("/login.jsp").forward(request, response)
+;			}
+			
+		} 
+			
+			request.setAttribute("messages", messages);
+			request.getRequestDispatcher("/login.jsp").forward(request, response);
+		
+		
 
-		if (email != null && password != null) {
+		/*if (email != null && password != null) {
 			
 			User user = dao.findUserByEmail(email);
 			
@@ -48,7 +81,7 @@ public class ServletLogin extends HttpServlet {
 			
 		} else {
 			System.out.println("Error nas credenciais");
-		}
+		}*/
 	}
 
 }
