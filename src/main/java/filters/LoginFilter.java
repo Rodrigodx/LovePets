@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 
-@WebFilter("/register_products.jsp")
+@WebFilter(urlPatterns = {"/register.jsp", "/register_products.jsp"})
 public class LoginFilter extends HttpFilter implements Filter {
        
 	private static final long serialVersionUID = 1L;

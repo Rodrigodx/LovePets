@@ -55,9 +55,7 @@ public class ServletLogin extends HttpServlet {
 				return;
 			}else {
 				messages.put("login", "Email or password incorret");
-				request.setAttribute("message", messages);
-				request.getRequestDispatcher("/login.jsp").forward(request, response)
-;			}
+			}
 			
 		} 
 			
