@@ -51,8 +51,15 @@ public class ServletLogin extends HttpServlet {
 			if(user != null && password.equals(user.getPassword())) {
 				HttpSession session = request.getSession();
 				session.setAttribute("user", user);
+				String from = (String) session.getAttribute("redirectAfterLogin");
+				session.removeAttribute("redirectAfterLogin");
+				if(from != null && !from.isEmpty()) {
+					response.sendRedirect(from);
+					return;
+				}else {
 				response.sendRedirect(request.getContextPath() + "/Inicial.jsp");
 				return;
+				}
 			}else {
 				messages.put("login", "Email or password incorret");
 			}
@@ -62,24 +69,6 @@ public class ServletLogin extends HttpServlet {
 			request.setAttribute("messages", messages);
 			request.getRequestDispatcher("/login.jsp").forward(request, response);
 		
-		
-
-		/*if (email != null && password != null) {
-			
-			User user = dao.findUserByEmail(email);
-			
-			if(user != null && password.equals(user.getPassword())) {
-				HttpSession session = request.getSession();
-				session.setAttribute("email", email);
-				response.sendRedirect("Inicial.jsp");
-				System.out.println("Feito o login");
-			}else {
-				System.out.println("Erro ao logar");
-			}
-			
-		} else {
-			System.out.println("Error nas credenciais");
-		}*/
 	}
 
 }

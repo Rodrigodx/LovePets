@@ -39,10 +39,17 @@ public class LoginFilter extends HttpFilter implements Filter {
 		
 		boolean loggedIn = session != null && session.getAttribute("user") != null;
 		boolean loginRequest = request.getRequestURI().equals(loginURI);
+		String from = request.getRequestURI();
 		
 		if (loggedIn || loginRequest) {
 			chain.doFilter(request, response);
 		} else {
+			
+			if(request.getQueryString() != null) {
+				from += "?" + request.getQueryString();
+			}
+			
+			request.getSession(true).setAttribute("redirectAfterLogin", from);
 			response.sendRedirect(loginURI);
 		}
 	}

@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 	
 <!DOCTYPE html>
 <html>
@@ -41,6 +42,8 @@
 				</div>
 			</c:if>
 		</div>
+		
+		<input type="hidden" name="from" value="${fn:escapeXml(param.from)}" />
 		
 		<c:if test="${messages.login != null}">
 			<div class="alert alert-danger" role="alert">
