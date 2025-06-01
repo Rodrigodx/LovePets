@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+
+.div-section {
+	display: flex;
+	flex-direction: row;
+	max-width: 100%;
+	justify-content: center;
+}
+
+.div-image {
+	width: 600px;
+	height: 470px;
+	margin-right: 10px;
+	
+}
+.image {
+	width: 500px;
+	height: 430px;
+	object-fit: contain;
+}
+
+.div-info{
+	width: 600px;
+	height: 470px;
+}
+
+.add-to-cart{
+	display: flex;
+	flex-direction: row;
+	gap: 15px;
+}
+
+.wrapper{
+	width: 100px;
+	height: 40px;
+}
+
+.qty{
+	width: 35.41px;
+	height: 38.4px;
+	text-align: center;
+}
+
+.btn-add-to-cart {
+	width: 360px;
+	height: 40px;
+}
