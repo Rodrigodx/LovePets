@@ -30,7 +30,7 @@
 			<div class="mb-3 inputs">
 				<label for="exampleInputEmail1" class="form-label">E-mail </label> <input
 					type="email" class="form-control" id="exampleInputEmail1" name="email"
-					aria-describedby="emailHelp" placeholder="Digite eeu e-mail">
+					aria-describedby="emailHelp" placeholder="Digite seu e-mail">
 			</div>
 			<div class="mb-3 inputs">
 				<label for="exampleInputPassword1" class="form-label">Senha</label>
