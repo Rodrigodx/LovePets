@@ -9,6 +9,7 @@ import java.util.List;
 
 import connection.SingleConnection;
 import enums.ProductCategory;
+import model.Cart;
 import model.Product;
 
 public class ProductDAO {
@@ -95,5 +96,38 @@ public class ProductDAO {
 			e.printStackTrace();
 		}
 		return listProducts;
+	}
+	
+	public List<Cart> getCartProducts (ArrayList<Cart> cartList){
+		List <Cart> products = new ArrayList<Cart>();
+		
+		try {
+			if(cartList.size() > 0) {
+				for(Cart item:products) {
+					String sql = "select * from love_pets.products where id = ?";
+					PreparedStatement select = connection.prepareStatement(sql);
+					select.setInt(1, item.getId());
+					
+					ResultSet result = select.executeQuery();
+					
+					while(result.next()) {
+						Cart cart = new Cart();
+						
+						cart.setId(result.getInt("id"));
+						cart.setName(result.getString("name"));
+						cart.setPrice(result.getDouble("price")*item.getQuantity());
+						cart.setPathImage(result.getString("name_image"));
+						cart.setQuantity(item.getQuantity());
+						
+						products.add(item);
+					}
+				}
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return products;
+		
 	}
 } 
