@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,23 +28,30 @@
 		<div class="cart">
 			<ul class="list-group">
 				<li class="list-group-item products">
-					<div class="card">
-						<img src="" class="card-image-top" alt="teste">
-						<div class="card-body">
-							<h5 class="card-title">name</h5>
-							<p class="fw-bold">R$ price</p>
-						</div>
-						<div class="actions">
-							<a class="btn btn-sm btn-decre" href=""><i
-								class="fas fa-minus-square"></i></a> <input type="text"
-								name="quantity" class="quantity" value="1" min="1" readonly>
-							<a class="btn btn-sm btn-incre" href=""><i
-								class="fas fa-plus-square"></i></a>
-						</div>
-						<div class="delete">
-							<input type="button" name="btn-del" class="btn-del" value="Deletar">
-						</div>
-					</div>
+					<c:if test="${cart_list != null}">
+						<c:forEach var="c" items="${cart_list}">
+							<div class="card">
+								<img src="${c.pathImage}" class="card-image-top" alt="${c.name}">
+								<div class="card-body">
+									<h5 class="card-title"> ${c.name}</h5>
+									<p class="fw-bold">R$ ${c.price}</p>
+								</div>
+								<form action="order-now" method="post" class="form-inline">
+									<input type="hidden" name="id" value="${c.id}" class="form-input">
+									<div class="actions">
+										<a class="btn btn-sm btn-decre" href=""><i
+											class="fas fa-minus-square"></i></a> <input type="text"
+											name="quantity" class="quantity" value="1" min="1" readonly>
+										<a class="btn btn-sm btn-incre" href=""><i
+											class="fas fa-plus-square"></i></a>
+									</div>
+									<div class="delete">
+										<input type="button" name="btn-del" class="btn-del" value="Deletar">
+									</div>
+								</form>
+							</div>
+						</c:forEach>
+					</c:if>
 				</li>
 			</ul>
 			<div class="total-value">

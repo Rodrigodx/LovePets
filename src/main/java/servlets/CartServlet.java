@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.Cart;
+import model.Product;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,10 +15,14 @@ import java.util.List;
 
 import org.apache.jasper.tagplugins.jstl.core.Out;
 
+import dao.ProductDAO;
+
 @WebServlet("/CartServlet")
 public class CartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	ProductDAO dao = new ProductDAO();
+	
 	public CartServlet() {
 		super();
 	}
@@ -28,17 +33,28 @@ public class CartServlet extends HttpServlet {
 		try {
 			List<Cart> cartList = new ArrayList<Cart>();
 
-			int id = Integer.parseInt(request.getParameter("id"));
+			String idParam = request.getParameter("id");
+			
 			Cart cart = new Cart();
+			
+			
+			
+			int id = Integer.parseInt(idParam);
+			
+			Product product = dao.findById(id);
+			
 			cart.setId(id);
+			cart.setName(product.getName());
+			cart.setPrice(product.getPrice());
+			cart.setPathImage(product.getPathImage());
 			cart.setQuantity(1);
 
 			HttpSession session = request.getSession();
-			List<Cart> cart_list = (List<Cart>) session.getAttribute("cart-list");
+			List<Cart> cart_list = (List<Cart>) session.getAttribute("cart_list");
 
 			if (cart_list == null) {
 				cartList.add(cart);
-				session.setAttribute("cart-list", cartList);
+				session.setAttribute("cart_list", cartList);
 				System.out.println("Session created and added the list");
 			} else {
 
@@ -59,10 +75,12 @@ public class CartServlet extends HttpServlet {
 				}
 			}
 			
+			request.setAttribute("cart_list", cartList);
+			request.getRequestDispatcher("/cart.jsp").forward(request, response);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

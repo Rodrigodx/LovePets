@@ -103,7 +103,7 @@ public class ProductDAO {
 		
 		try {
 			if(cartList.size() > 0) {
-				for(Cart item:products) {
+				for(Cart item:cartList) {
 					String sql = "select * from love_pets.products where id = ?";
 					PreparedStatement select = connection.prepareStatement(sql);
 					select.setInt(1, item.getId());
@@ -119,7 +119,7 @@ public class ProductDAO {
 						cart.setPathImage(result.getString("name_image"));
 						cart.setQuantity(item.getQuantity());
 						
-						products.add(item);
+						products.add(cart);
 					}
 				}
 			}
