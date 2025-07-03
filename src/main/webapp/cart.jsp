@@ -36,7 +36,6 @@
 									<h5 class="card-title"> ${c.name}</h5>
 									<p class="fw-bold">R$ ${c.price}</p>
 								</div>
-								<form action="order-now" method="post" class="form-inline">
 									<input type="hidden" name="id" value="${c.id}" class="form-input">
 									<div class="actions">
 										<a class="btn btn-sm btn-decre" href=""><i
@@ -48,7 +47,6 @@
 									<div class="delete">
 										<input type="button" name="btn-del" class="btn-del" value="Deletar">
 									</div>
-								</form>
 							</div>
 						</c:forEach>
 					</c:if>

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
 
 <!DOCTYPE html>
 <html>
@@ -7,6 +9,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="./css/header.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -22,6 +25,16 @@
 						aria-label="Search">
 					<button class="btn btn-outline-success" type="submit">Search</button>
 				</form>
+				<a href="cart.jsp">
+					<i class="fa fa-shopping-cart" style="font-size:26px">
+						<c:if test="${cart_list.size() >= 1}">
+							<span class="badge rounded-pill text-bg-danger" style="font-size:10px; margin-bottom: 10px;"> 
+								${cart_list.size()}
+							</span>
+							
+						</c:if>
+					</i>				
+				</a>
 				<span> <a class="nav-link" href="login.jsp"> Entre ou
 						Cadastre-se </a>
 				</span>

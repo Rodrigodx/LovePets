@@ -37,8 +37,6 @@ public class CartServlet extends HttpServlet {
 			
 			Cart cart = new Cart();
 			
-			
-			
 			int id = Integer.parseInt(idParam);
 			
 			Product product = dao.findById(id);
