@@ -18,12 +18,10 @@ import org.apache.jasper.tagplugins.jstl.core.Out;
 import dao.ProductDAO;
 
 @WebServlet("/CartServlet")
-public class CartServlet extends HttpServlet {
+public class AddToCartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	ProductDAO dao = new ProductDAO();
 	
-	public CartServlet() {
+	public AddToCartServlet() {
 		super();
 	}
 
@@ -31,51 +29,37 @@ public class CartServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		try {
-			List<Cart> cartList = new ArrayList<Cart>();
 
 			String idParam = request.getParameter("id");
-			
-			Cart cart = new Cart();
-			
 			int id = Integer.parseInt(idParam);
 			
-			Product product = dao.findById(id);
+			Cart cart = new Cart();			
 			
 			cart.setId(id);
-			cart.setName(product.getName());
-			cart.setPrice(product.getPrice());
-			cart.setPathImage(product.getPathImage());
 			cart.setQuantity(1);
 
 			HttpSession session = request.getSession();
-			List<Cart> cart_list = (List<Cart>) session.getAttribute("cart_list");
-
-			if (cart_list == null) {
+			List<Cart> cartList = (List<Cart>) session.getAttribute("cart_list");
+			
+			if (cartList == null) {
+				cartList = new ArrayList();
 				cartList.add(cart);
 				session.setAttribute("cart_list", cartList);
 				System.out.println("Session created and added the list");
 			} else {
 
-				cartList = cart_list;
-				boolean exist = false;
-
-				for (Cart c : cartList) {
-					if (c.getId() == id) {
-						exist = true;
-						System.out.println("produto existe");
-						break;
-					}
-				}
-
-				if (!exist) {
+				boolean exist = cartList.stream().anyMatch(c -> c.getId() == id);
+				
+				if(!exist) {
 					cartList.add(cart);
-					System.out.println("produto adicionado");
+					System.out.println("Produto Adicionado");
+				}else {
+					System.out.println("produto existe");
 				}
 			}
 			
-			request.setAttribute("cart_list", cartList);
-			request.getRequestDispatcher("/cart.jsp").forward(request, response);
-			
+			response.sendRedirect("ViewCartServlet?id=" + id);
+						
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

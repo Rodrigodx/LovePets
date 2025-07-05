@@ -22,6 +22,8 @@
 }
 
 .card {
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr 1fr;
 	align-items: center;
 	width: 650px;
 	margin-bottom: 10px;
@@ -35,7 +37,6 @@
 	padding-top: 2px;
 	margin: auto;
 }
-
 
 .actions {
 	width: 110px;
