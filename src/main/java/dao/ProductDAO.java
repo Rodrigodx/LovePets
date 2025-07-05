@@ -148,7 +148,6 @@ public class ProductDAO {
 
 				}
 			}
-			
 
 		} catch (Exception e) {
 			e.printStackTrace();

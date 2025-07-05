@@ -40,8 +40,10 @@ public class ViewCartServlet extends HttpServlet {
 		}
 		
 		List<Cart> result = dao.getCartProducts(cartList);
+		double totalPrice = dao.getAllCartPrice(cartList);
 		
 		request.setAttribute("cart_list", result);
+		request.setAttribute("total_price", totalPrice);
 		request.getRequestDispatcher("/cart.jsp").forward(request, response);
 	}
 

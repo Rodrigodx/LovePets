@@ -53,7 +53,7 @@
 				</li>
 			</ul>
 			<div class="total-value">
-				<p>Total R$ 000000</p>
+				<p>Total R$ ${total_price}</p>
 				<input type="button" name="btn-push" class="btn-push" value="Comprar">
 				<a class="btn" href="Inicial.jsp">Buscar mais produtos</a>
 			</div>
