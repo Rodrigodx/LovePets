@@ -34,6 +34,11 @@ public class ViewCartServlet extends HttpServlet {
 			cartList = new ArrayList<>();
 		}
 		
+		if(cartList == null || cartList.isEmpty()) {
+			response.sendRedirect("Inicial.jsp");
+			return;
+		}
+		
 		List<Cart> result = dao.getCartProducts(cartList);
 		
 		request.setAttribute("cart_list", result);
