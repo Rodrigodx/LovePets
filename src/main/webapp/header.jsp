@@ -27,16 +27,15 @@
 				</form>
 				<c:forEach var="c" items="${cart_list}" >			
 					<a href="ViewCartServlet?id=${c.id}">
+						<i class="fa fa-shopping-cart" style="font-size:26px">
+							<c:if test="${cart_list.size() >= 1}">
+								<span class="badge rounded-pill text-bg-danger" style="font-size:10px; margin-bottom: 10px;"> 
+									${cart_list.size()}
+								</span>
+							</c:if>
+						</i>				
+					</a>
 				</c:forEach>
-					<i class="fa fa-shopping-cart" style="font-size:26px">
-						<c:if test="${cart_list.size() >= 1}">
-							<span class="badge rounded-pill text-bg-danger" style="font-size:10px; margin-bottom: 10px;"> 
-								${cart_list.size()}
-							</span>
-							
-						</c:if>
-					</i>				
-				</a>
 				<span> <a class="nav-link" href="login.jsp"> Entre ou
 						Cadastre-se </a>
 				</span>

@@ -38,10 +38,10 @@
 								</div>
 									<input type="hidden" name="id" value="${c.id}" class="form-input">
 									<div class="actions">
-										<a class="btn btn-sm btn-decre" href=""><i
+										<a class="btn btn-sm btn-decre" href="QuantityItemServlet?action=dec&id=${c.id}"><i
 											class="fas fa-minus-square"></i></a> <input type="text"
-											name="quantity" class="quantity" value="1" min="1" readonly>
-										<a class="btn btn-sm btn-incre" href=""><i
+											name="quantity" class="quantity" value="${c.quantity}" min="1" readonly>
+										<a class="btn btn-sm btn-incre" href="QuantityItemServlet?action=inc&id=${c.id}"><i
 											class="fas fa-plus-square"></i></a>
 									</div>
 									<div class="delete">
