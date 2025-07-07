@@ -28,7 +28,7 @@ public class QuantityItemServlet extends HttpServlet {
 		
 		List<Cart> cartList = (List<Cart>) request.getSession().getAttribute("cart_list");
 		
-		if(action != null & id > 1) {
+		if(action != null & id >= 1) {
 			if(action.equals("inc")) {
 				for(Cart c:cartList) {
 					if(c.getId() == id) {
