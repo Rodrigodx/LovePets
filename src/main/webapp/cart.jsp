@@ -28,7 +28,6 @@
 		<div class="cart">
 			<ul class="list-group">
 				<li class="list-group-item products">
-					<c:if test="${cart_list != null}">
 						<c:forEach var="c" items="${cart_list}">
 							<div class="card">
 								<img src="${c.pathImage}" class="card-image-top" alt="${c.name}">
@@ -49,11 +48,15 @@
 									</div>
 							</div>
 						</c:forEach>
-					</c:if>
 				</li>
 			</ul>
 			<div class="total-value">
-				<p>Total R$ ${total_price}</p>
+				<c:if test="${cart_list == null || empty cart_list}">
+					<p>Total RS 0</p>
+				</c:if>
+				<c:if test="${cart_list != null && not empty cart_list}">
+					<p>Total R$ ${total_price}</p>
+				</c:if>
 				<input type="button" name="btn-push" class="btn-push" value="Comprar">
 				<a class="btn" href="Inicial.jsp">Buscar mais produtos</a>
 			</div>
