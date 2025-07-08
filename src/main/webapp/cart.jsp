@@ -45,7 +45,7 @@
 											class="fas fa-plus-square"></i></a>
 									</div>
 									<div class="delete">
-										<input type="button" name="btn-del" class="btn-del" value="Deletar">
+										<a class="delete-item" href="RemoveFromCartServlet?id=${c.id}">Deletar</a>
 									</div>
 							</div>
 						</c:forEach>
