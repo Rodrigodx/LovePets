@@ -36,7 +36,6 @@ public class ServletLogin extends HttpServlet {
 		String password = request.getParameter("password");
 		Map<String, String> messages = new HashMap<String, String>();
 		
-		
 		if (email == null || email.isEmpty()) {
 			messages.put("email", "Please enter your email");
 		}
@@ -57,18 +56,15 @@ public class ServletLogin extends HttpServlet {
 					response.sendRedirect(from);
 					return;
 				}else {
-				response.sendRedirect(request.getContextPath() + "/Inicial.jsp");
+					response.sendRedirect(request.getContextPath() + "/Inicial.jsp");
 				return;
 				}
 			}else {
 				messages.put("login", "Email or password incorret");
-			}
-			
+			}	
 		} 
-			
 			request.setAttribute("messages", messages);
 			request.getRequestDispatcher("/login.jsp").forward(request, response);
-		
 	}
 
 }

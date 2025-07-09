@@ -36,7 +36,6 @@ public class LoginFilter extends HttpFilter implements Filter {
 		HttpSession session = request.getSession(false);
 		String loginURI = request.getContextPath() + "/login.jsp";
 		
-		
 		boolean loggedIn = session != null && session.getAttribute("user") != null;
 		boolean loginRequest = request.getRequestURI().equals(loginURI);
 		String from = request.getRequestURI();
