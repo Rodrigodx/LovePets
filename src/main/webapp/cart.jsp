@@ -57,7 +57,7 @@
 				<c:if test="${cart_list != null && not empty cart_list}">
 					<p>Total R$ ${total_price}</p>
 				</c:if>
-				<input type="button" name="btn-push" class="btn-push" value="Comprar">
+				<a class="mx-3 btn btn-primary" href="OrderServlet">Comprar</a>
 				<a class="btn" href="Inicial.jsp">Buscar mais produtos</a>
 			</div>
 		</div>

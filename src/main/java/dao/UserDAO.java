@@ -40,12 +40,13 @@ public class UserDAO {
 		
 		try {
 			
-			String sql = "select email, password from love_pets.users where email = ?";
+			String sql = "select id, email, password from love_pets.users where email = ?";
 			PreparedStatement statement = connection.prepareStatement(sql);
 			statement.setString(1, email);
 			ResultSet rs = statement.executeQuery();
 			
 			if(rs.next()) {
+				user.setId(rs.getInt("id"));
 				user.setEmail(rs.getString("email"));
 				user.setPassword(rs.getString("password"));
 			}
