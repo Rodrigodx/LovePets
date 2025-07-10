@@ -49,7 +49,7 @@ public class OrderServlet extends HttpServlet {
 					if(!result) break;
 				}
 				cart_list.clear();
-				response.sendRedirect("orders.jsp");
+				response.sendRedirect("ViewOrdersServlet");
 				
 			}else {
 				if(user == null) {
