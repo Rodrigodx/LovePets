@@ -31,7 +31,6 @@ public class ViewOrdersServlet extends HttpServlet {
 		try {
 			HttpSession session = request.getSession();
 			
-			List<Order> orders = (List<Order>) session.getAttribute("order_list");
 			User user = (User) session.getAttribute("user");
 			
 			if(user != null) {

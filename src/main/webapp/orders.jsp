@@ -13,39 +13,45 @@
 	rel="stylesheet"
 	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
 	crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="./css/cart.css">
+<link rel="stylesheet" type="text/css" href="./css/orders.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
 <body>
 
 	<header>
-		<%@ include file="simple_header.jsp"%>
+		<%@ include file="header.jsp"%>
 	</header>
 
-
 	<section>
-		<div class="cart">
-			<ul class="list-group">
+		<div class="orders">
+			<ul class="list-group group_products">
 				<li class="list-group-item products">
-						<c:forEach var="c" items="${order_list}">
-							<div class="card">
-								<img src="${c.pathImage}" class="card-image-top" alt="${c.name}">
-								<div class="card-body">
-									<h5 class="card-title"> ${c.name}</h5>
-									<p class="fw-bold">R$ ${c.price}</p>
+						<c:forEach var="o" items="${order_list}">
+							<div class="card">						
+								<div class="order-card-header">
+									<p class="">
+										<b>N° do pedido:</b>
+										<strong class="order-number">${o.orderId}</strong>
+									</p>
+									<div class="divisão"> | </div>
+									<p class="">
+										<b>Data do pedido:</b>
+										<strong class="order-date">${o.date}</strong>
+									</p>
+									<div class="divisão"> | </div>
+									<p>
+										<b>Categoria:</b>
+									</p>
 								</div>
-									<input type="hidden" name="id" value="${c.id}" class="form-input">
-									<div class="actions">
-										<a class="btn btn-sm btn-decre" href="QuantityItemServlet?action=dec&id=${c.id}"><i
-											class="fas fa-minus-square"></i></a> <input type="text"
-											name="quantity" class="quantity" value="${c.quantity}" min="1" readonly>
-										<a class="btn btn-sm btn-incre" href="QuantityItemServlet?action=inc&id=${c.id}"><i
-											class="fas fa-plus-square"></i></a>
+								<div class="order-card">
+									<img src="${o.pathImage}" class="card-image-top" alt="${o.name}">
+									<div class="card-body">
+										<h5 class="card-title"> ${o.name}</h5>
+										<p class="fw-bold">R$ ${o.price}</p>
 									</div>
-									<div class="delete">
-										<a class="delete-item" href="RemoveFromCartServlet?id=${c.id}">Deletar</a>
-									</div>
+										<input type="hidden" name="id" value="${o.id}" class="form-input">
+								</div>
 							</div>
 						</c:forEach>
 				</li>
