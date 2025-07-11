@@ -60,6 +60,7 @@ public class OrderDAO {
 				order.setName(product.getName());
 				order.setCategory(product.getProductCategory());
 				order.setPrice(product.getPrice());
+				order.setPathImage(product.getPathImage());
 				order.setQuantity(rs.getInt("o_quantity"));
 				order.setDate(rs.getString("o_date"));
 				list.add(order);
