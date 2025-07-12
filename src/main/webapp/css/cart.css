@@ -56,5 +56,12 @@
 .total-value{
 	display:flex;
 	flex-direction: column;
-	border-color: red;
+	margin-top: 10px;
+	border-radius: 4px;
+	background-color: rgb(243, 243, 243);
+}
+
+.total-price{
+	margin-left:16px;
+	font-size: 20px;
 }

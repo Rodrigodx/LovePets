@@ -44,7 +44,7 @@
 											class="fas fa-plus-square"></i></a>
 									</div>
 									<div class="delete">
-										<a class="delete-item" href="RemoveFromCartServlet?id=${c.id}">Deletar</a>
+										<a class="btn btn-sm btn-danger" href="RemoveFromCartServlet?id=${c.id}">Remover</a>
 									</div>
 							</div>
 						</c:forEach>
@@ -52,10 +52,10 @@
 			</ul>
 			<div class="total-value">
 				<c:if test="${cart_list == null || empty cart_list}">
-					<p>Total RS 0</p>
+					<p class="fw-bold total-price">Total RS 0</p>
 				</c:if>
 				<c:if test="${cart_list != null && not empty cart_list}">
-					<p>Total R$ ${total_price}</p>
+					<p class="fw-bold total-price">Total R$ ${total_price}</p>
 				</c:if>
 				<a class="mx-3 btn btn-primary" href="OrderServlet">Comprar</a>
 				<a class="btn" href="Inicial.jsp">Buscar mais produtos</a>
