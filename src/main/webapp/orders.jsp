@@ -24,6 +24,11 @@
 	</header>
 
 	<section>
+	
+		<h2>
+			Minhas compras
+		</h2>
+	
 		<div class="orders">
 			<ul class="list-group group_products">
 				<li class="list-group-item products">
@@ -38,10 +43,6 @@
 									<p class="">
 										<b>Data do pedido:</b>
 										<strong class="order-date">${o.date}</strong>
-									</p>
-									<div class="divisão"> | </div>
-									<p>
-										<b>Categoria:</b>
 									</p>
 								</div>
 								<div class="order-card">

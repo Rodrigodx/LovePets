@@ -28,7 +28,7 @@ public class OrderServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			
-			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 			Date date = new Date();
 			
 			List<Cart> cart_list = (List<Cart>) request.getSession().getAttribute("cart_list");

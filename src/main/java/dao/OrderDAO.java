@@ -42,7 +42,7 @@ public class OrderDAO {
 	
 	public List<Order> userOrders(int id){
 		
-		List<Order> list = new ArrayList<>();
+		List<Order> list = new ArrayList<Order>();
 		try {
 			
 			String sql = "select * from love_pets.orders where u_id = ? order by orders.o_id desc";
