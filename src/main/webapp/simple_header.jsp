@@ -13,9 +13,8 @@
 		<nav class="navbar bg-light">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="Inicial.jsp"> <img
-					src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="Logo"
-					width="30" height="24" class="d-inline-block align-text-top">
-					Bootstrap
+				src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdAIRPTXaAzFvwOGMBfFnduCsBuAqzbBKpug&https://i.pinimg.com/736x/ca/4a/f2/ca4af20b57850bdc75c69d7da3a1fc25.jpgs" alt="Logo"
+				width="60" height="60" class="d-inline-block align-text-top">
 				</a>
 			</div>
 		</nav>

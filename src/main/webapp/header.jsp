@@ -17,9 +17,8 @@
 	<nav class="navbar bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="Inicial.jsp"> <img
-				src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fpt%2Fsearch%2Fpet-food-logo&psig=AOvVaw0uqO-vH3pbIEe1qWgPPxDt&ust=1752446455339000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLDN8oqyuI4DFQAAAAAdAAAAABAE" alt="Logo"
-				width="30" height="24" class="d-inline-block align-text-top">
-				Bootstrap
+				src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdAIRPTXaAzFvwOGMBfFnduCsBuAqzbBKpug&https://i.pinimg.com/736x/ca/4a/f2/ca4af20b57850bdc75c69d7da3a1fc25.jpgs" alt="Logo"
+				width="60" height="60" class="d-inline-block align-text-top">
 			</a>
 			<form class="d-flex" role="search">
 				<input class="form-control me-2" type="search" placeholder="Search"
@@ -47,10 +46,13 @@
 				</a> 
 			</c:if>
 			
-			<span> 
-				<a class="nav-link" href="login.jsp"> 
-					Entre ou Cadastre-se 
-				</a>
+			<span>
+				<c:if test="${user != null}">
+					<a class="nav-link" href="LogoutServlet" style="margin-right: 97px">Logout</a>
+				</c:if>
+				<c:if test="${user == null}">
+					<a class="nav-link" href="login.jsp"> Entre ou Cadastre-se</a>
+				</c:if> 
 			</span>
 		</div>
 	</nav>
