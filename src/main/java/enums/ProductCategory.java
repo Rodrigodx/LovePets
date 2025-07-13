@@ -8,7 +8,9 @@ public enum ProductCategory {
 	MEDICAMENTOS(2),
 	ANTIPULGAS(3),
 	GATOS(4),
-	CACHORRO(5);
+	CACHORRO(5),
+	PASSAROS(6),
+	PEIXES(7);
 	
 	public final Integer cod;
 	

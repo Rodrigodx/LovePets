@@ -21,16 +21,11 @@
 		<div class="flex-shrink-0 div-image">
 			<img src="${produto.pathImage}" alt="..." class="image">
 		</div>
-		<div class="ms-3 div-info">
-			<p>${produto.name}</p>
-			<p>R$ ${produto.price}</p>
+		<div class="card">
+			<h1 class="name">${produto.name}</h1>
+			<p class="fw-bold price">R$ ${produto.price}</p>
 			<div class="add-to-cart">
-				<div class="wrapper">
-					<a class="btn btn-sm btn-decre" href=""><i class="fas fa-minus-square"></i></a>
-					<input type="text" name="quantity" class="quantity" value="1" min="1" readonly>
-					<a class="btn btn-sm btn-incre" href=""><i class="fas fa-plus-square"></i></a>
-				</div>
-				<a class="btn-add-to-cart" href="CartServlet?id=${produto.getId()}">Adicionar ao carrinho</a>
+				<a class="mx-3 btn btn-primary btn-add-to-cart" href="CartServlet?id=${produto.getId()}">Adicionar ao carrinho</a>
 			</div>
 		</div>
 	</div>

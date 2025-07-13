@@ -30,10 +30,23 @@
 	height: 470px;
 }
 
+.card{
+	width: 500px;
+	border-color: transparent;
+}
+
+.name{
+	margin-left: 18px;
+}
+
+.price{
+	margin-left: 18px;
+	font-size: 18px;
+}
+
 .add-to-cart{
-	display: flex;
-	flex-direction: row;
-	gap: 15px;
+	display: grid;
+	grid-template-columns: 1fr 2fr; 
 }
 
 .wrapper{

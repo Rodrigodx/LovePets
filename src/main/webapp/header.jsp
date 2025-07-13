@@ -75,6 +75,7 @@
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="#">Contatos</a></li>
 						<li><a class="dropdown-item" href="#">Serviços</a></li>
+						<li><a class="dropdown-item" href="ViewOrdersServlet">Minhas compras</a></li>
 					</ul></li>
 			</ul>
 		</div>
