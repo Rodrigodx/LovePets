@@ -16,8 +16,8 @@
 <body>
 	<nav class="navbar bg-light">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#"> <img
-				src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="Logo"
+			<a class="navbar-brand" href="Inicial.jsp"> <img
+				src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fpt%2Fsearch%2Fpet-food-logo&psig=AOvVaw0uqO-vH3pbIEe1qWgPPxDt&ust=1752446455339000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLDN8oqyuI4DFQAAAAAdAAAAABAE" alt="Logo"
 				width="30" height="24" class="d-inline-block align-text-top">
 				Bootstrap
 			</a>
@@ -67,8 +67,8 @@
 						<li><a class="dropdown-item" href="ServletProduct?category=3">Antipulgas
 								e carrapatos</a></li>
 					</ul>
-				<li class="nav-item"><a class="nav-link" href="#">Gatos</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Cachorros</a></li>
+				<li class="nav-item"><a class="nav-link" href="ServletProduct?category=4">Gatos</a></li>
+				<li class="nav-item"><a class="nav-link" href="ServletProduct?category=5">Cachorros</a></li>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
 					role="button" aria-expanded="false">Outros</a>

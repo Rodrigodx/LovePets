@@ -6,7 +6,9 @@ import java.util.Optional;
 public enum ProductCategory {
 	VERMIFUGOS(1),
 	MEDICAMENTOS(2),
-	ANTIPULGAS(3);
+	ANTIPULGAS(3),
+	GATOS(4),
+	CACHORRO(5);
 	
 	public final Integer cod;
 	
