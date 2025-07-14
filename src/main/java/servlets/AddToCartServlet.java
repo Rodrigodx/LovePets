@@ -7,15 +7,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.Cart;
-import model.Product;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.jasper.tagplugins.jstl.core.Out;
-
-import dao.ProductDAO;
 
 @WebServlet("/CartServlet")
 public class AddToCartServlet extends HttpServlet {
