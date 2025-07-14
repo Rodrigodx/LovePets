@@ -7,7 +7,7 @@
 
 ## Sobre o projeto
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<img src="src/main/webapp/META-INF/imagens/Imagens das páginas/Tela Inicial.png" alt="Logo" width="800" height="800">
 
 O Love Pets foi criado para facilitar a vida de pessoas que possuem pets e querem o melhor para seu animal de estimação, podendo comprar de rações a medicamento e a camas.
 
@@ -86,15 +86,22 @@ Após baixar:
 git clone https://github.com/Rodrigodx/LovePets.git
 ```
 
+2° Abra o cmd na pasta raiz do projeto e rode o seguinte comando:
+
+```bash
+mvn clean install
+```
+* Isso irá criar o snapshot na pasta Target que é necessário para o Tomcat executar o projeto.
+
 2º Abra o a pasta do repositório em sua IDE.
 
-3º Rode o servidor TomCat.
+3º Configure o Servidor Tomcat e o execute.
 
 4º Acesse a URL "localhost:8080/LovePets" para chegar na página inicial do projeto.
 
 ## Uso do projeto
 
-1º Página Inicial:
+1° Página Inicial:
 
 ```bash
 url: localhost:8080/LovePets
@@ -155,6 +162,30 @@ url: http://localhost:8080/LovePets/register_products.jsp
 ```
 
 <img src="src/main/webapp/META-INF/imagens/Imagens das páginas/Cadastro de produtos.png" alt="Logo" width="800" height="800">
+
+# Contribuindo
+
+1º Faça Fork do projeto.
+
+2° Crie uma Branch com a feature que vc irá fazer fazer (```git checkout -b feature/(your feature)```).
+
+3° Faça commit da suas alterações no projeto (``` git commit -m "(Alteração feita)" ```).
+
+4° Faça o push da sua branch (```git push feature/(your feature)```).
+
+5° Abra um Pull Request.
+
+# Contribuidores
+
+<a href="https://github.com/Rodrigodx/LovePets/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Rodrigodx/LovePets" alt="contrib.rocks image" />
+</a>
+
+## Contato
+
+Rodrigo Correia - Linkedin: ([https://www.linkedin.com/in/rodrigobcorreia])
+
+E-mail: rodrigodx52@gmail.com
 
 
 
