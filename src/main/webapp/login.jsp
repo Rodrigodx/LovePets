@@ -48,6 +48,9 @@
 					<div class="invalid-feedback">${messages.password}</div>
 				</c:if>
 			</div>
+			<div>
+				<p class="nav-link">Novo aqui? <a href="register.jsp">Crie sua conta</a></p>
+			</div>
 
 			<input type="hidden" name="from" value="${fn:escapeXml(param.from)}" />
 
